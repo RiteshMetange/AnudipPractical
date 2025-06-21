@@ -1,0 +1,6 @@
+CREATE DATABASE JDBCDEMO;
+USE JDBCDEMO;
+
+
+show tables;
+

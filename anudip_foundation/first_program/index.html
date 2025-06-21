@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Trilogy Internship Countdown</title>
+  <style>
+    body {
+      background: #090d16;
+      color: white;
+      font-family: 'Segoe UI', sans-serif;
+      text-align: center;
+      margin-top: 100px;
+    }
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+    }
+    #countdown {
+      font-size: 2rem;
+    }
+  </style>
+</head>
+<body>
+  <h1>Trilogy Internship Countdown 🚀</h1>
+  <h1 style="font-family: 'Courier New', Courier, monospace;"> May 11, 2026</h1>
+  <div id="countdown"></div>
+
+
+  <script>
+    const countdownDate = new Date("May 11, 2026 09:00:00").getTime();
+
+    const timer = setInterval(() => {
+      const now = new Date().getTime();
+      const distance = countdownDate - now;
+
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+      document.getElementById("countdown").innerHTML = 
+        `${days} Days ${hours} Hours ${minutes} Min ${seconds} Sec`;
+
+      if (distance < 0) {
+        clearInterval(timer);
+        document.getElementById("countdown").innerHTML = "Let's Go! 🚀";
+      }
+    }, 1000);
+  </script>
+</body>
+</html>
